@@ -200,7 +200,7 @@ form#reward{
     font-size:0.8em;
 }
 
-.inner-sect.three{
+.inner-sect.three, .seven{
     pointer-events: none;
     opacity: 0.4;
 }
@@ -225,8 +225,36 @@ form#reward{
     border-radius: 15px;
 }
 
-.four, .five{
+.four, .five, .six, .seven{
     padding: 5%;
+    position: relative;
+}
+
+label{
+    font-weight: 700;
+}
+
+.modal-content span{
+    font-weight: 400;
+    color: var(--main-cyan);
+    padding: 0 1rem;
+}
+
+.modal-content p{
+    font-size: 14px;
+}
+
+.backers-left{
+position:absolute;
+left: 90%;
+top: 20%;
+font-weight: 700;
+}
+
+.backers-left span{
+    font-weight: 400;
+    color:var(--light-gray);
+    padding:0 2px;
 }
 
 input[type="checkbox"]{
@@ -246,10 +274,10 @@ input[type="checkbox"]{
       }
       
 input[type="checkbox"]::before{
-        /* background-image : url('checkbox.svg'); */
         border-color : var(--main-cyan);
       }
 
 .visibility{
     display: none;
 }
+
