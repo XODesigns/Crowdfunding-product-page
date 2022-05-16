@@ -104,6 +104,11 @@ header{
     width: 200px;
 }
 
+.green:hover{
+    background-color: var(--light-cyan);
+
+}
+
 .bookmark{
     background-color: var(--light-gray);
     border: none;
@@ -180,6 +185,19 @@ form#reward{
     margin: 0 0 4% 0;
 }
 
+.modal-sect{
+    padding: 4% 0;
+    border:1px solid var(--light-gray);
+    border-radius: 15px;
+    margin: 0 0 4% 0;
+}
+
+.modal-sect-1{
+    padding:0 5%;
+}
+
+
+
 .inner-head{
     display: flex;
     justify-content: space-between;
@@ -194,6 +212,7 @@ form#reward{
     height: 45px;
     width: 150px;
 }
+
 
 .inner-head p{
     color: var(--main-cyan);
@@ -226,7 +245,6 @@ form#reward{
 }
 
 .four, .five, .six, .seven{
-    padding: 5%;
     position: relative;
 }
 
@@ -281,3 +299,46 @@ input[type="checkbox"]::before{
     display: none;
 }
 
+label{
+    cursor: pointer;
+}
+
+
+label:hover{
+    color:var(--light-cyan)
+}
+
+.modal-btn{
+    background-color: var(--main-cyan);
+    border: none;
+    border-radius: 50px;
+    /* padding: 3% 8%; */
+    color: var(--white);
+    font-weight: 700;
+    height: 40px;
+    width: 100px;
+}
+
+.hr{
+    border-top:1px solid var(--light-gray);
+    padding-bottom:1rem;
+}
+
+/* .pledge{
+    display:none;
+} */
+
+input[type="text"]{
+    border: 1px var(--main-cyan) solid;
+    border-radius: 50px;
+    /* padding: 3% 8%; */
+    font-weight: 700;
+    height: 40px;
+    width: 40px;  
+    padding: 0 2%;
+    color:var(-black)
+}
+
+input[type="text"]:focus{
+    border: 1px var(--light-cyan) solid !important; 
+}
