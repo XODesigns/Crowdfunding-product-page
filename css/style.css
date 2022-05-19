@@ -185,19 +185,6 @@ form#reward{
     margin: 0 0 4% 0;
 }
 
-.modal-sect{
-    padding: 4% 0;
-    border:1px solid var(--light-gray);
-    border-radius: 15px;
-    margin: 0 0 4% 0;
-
-}
-
-.modal-sect-1{
-    padding:0 5%;
-}
-
-
 
 .inner-head{
     display: flex;
@@ -220,7 +207,7 @@ form#reward{
     font-size:0.8em;
 }
 
-.inner-sect.three, .seven{
+.inner-sect.three, .mahogany{
     pointer-events: none;
     opacity: 0.4;
 }
@@ -240,20 +227,14 @@ form#reward{
 
 .modal-content{
     background-color: var(--white);
-    width: 45%;
-    padding: 0 2%;
+    width: 46%;
+    padding: 2%;
     border-radius: 15px;
     height: 100%;
     margin: 5% 0;
 }
 
-.four, .five, .six, .seven{
-    position: relative;
-}
 
-label{
-    font-weight: 700;
-}
 
 .modal-content span{
     font-weight: 400;
@@ -265,18 +246,6 @@ label{
     font-size: 14px;
 }
 
-.backers-left{
-position:absolute;
-left: 90%;
-top: 20%;
-font-weight: 700;
-}
-
-.backers-left span{
-    font-weight: 400;
-    color:var(--light-gray);
-    padding:0 2px;
-}
 
 input[type="radio"]{
         -webkit-appearance : none;
@@ -288,8 +257,8 @@ input[type="radio"]{
         width: 25px;
         height: 25px;
         border: 1px solid var(--light-gray);
-        border-radius: 50px;
-        transform: translateY(1.5rem);
+        border-radius: 50%;
+        place-content: center;
         display: grid;
         place-content: center;
 
@@ -298,12 +267,12 @@ input[type="radio"]{
 
       input[type="radio"]::before{
         content: "";
-        width: 12px;
-        height: 12px;
+        width: 12.5px;
+        height: 12.5px;
         transform: scale(0);
         transition: 120ms transform ease-in-out;
         box-shadow: inset 1em 1em var(--main-cyan);
-        border-radius: 50px;
+        border-radius: 50%;
       }
 
       input[type="radio"]:checked::before {
@@ -316,18 +285,18 @@ input[type="radio"]{
     display: none;
 }
 
+
+
 label{
+    font-weight: 700;
     cursor: pointer;
 }
-
 
 label:hover{
     color:var(--light-cyan)
 }
 
-.label{
-    padding: 0 6%;
-}
+
 
 .modal-btn{
     background-color: var(--main-cyan);
@@ -341,10 +310,7 @@ label:hover{
     grid-column: 5/6;
 }
 
-.hr{
-    border-top:1px solid var(--light-gray);
-    padding-bottom:1rem;
-}
+
 
 .hide{
     display:none;
@@ -357,7 +323,7 @@ label:hover{
 
 }
 
-.Amount{
+.amount{
     grid-column: 1/2;
     font-weight: 400;
     color:var(--dark-gray);
@@ -368,7 +334,6 @@ input[type="text"]{
     outline: 1px var(--main-cyan) solid;
     border:none;
     border-radius: 50px;
-    /* padding: 3% 8%; */
     font-weight: 700;
     height: 40px;
     width: 70px;  
@@ -381,5 +346,58 @@ input[type="text"]:focus{
     outline: 1px var(--light-cyan) solid!important; 
 }
 
+.border{
+    border: 1px solid var(--main-cyan)
+}
 
 
+.no-pledge, .bamboo-stand, .black-edition, .mahogany{
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 2fr 1fr 1fr;
+    gap: 5px;
+}
+
+.label{
+    grid-column:2/4;
+}
+
+.bamboo{
+    grid-column:1/2;
+}
+
+.stand, .mahog, .black{
+  grid-column:5/6;  
+  font-weight: 700;
+  text-align: right;
+}
+
+
+.stand span, .mahog span, .black span{
+        font-weight: 400;
+        color:var(--light-gray);
+        padding:0 2px;
+    }
+
+    
+.pledge-container{
+    border:1px solid var(--light-gray);
+    border-radius: 5px;
+    margin: 3% 0;
+}
+
+
+.modal-sect-1{
+        padding:3%;
+    }
+
+.modal-sect-1 p{
+    padding:0 0 0 7%;
+}
+
+.bottom{
+    padding:3% 4%;
+}
+
+.hr{
+    border-top:1px solid var(--light-gray);
+}
