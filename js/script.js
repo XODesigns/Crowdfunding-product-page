@@ -49,6 +49,7 @@ btn.addEventListener("click", ()=>{
         })
     })
 
+
     /** continue buttons on the modal */
 // proceed.forEach((e)=>{
 //     e.addEventListener("click", (evt)=>{
@@ -71,6 +72,11 @@ btn.addEventListener("click", ()=>{
                 fund.innerHTML = `$ ${result}`
                 modalMain.classList.add("visibility")
                 thanks.classList.remove('hide')
+                e.value =""
+                pledge[0].classList.add('hide')
+            pledge[1].classList.add('hide')
+            pledge[2].classList.add('hide')
+
             }
         })
         
