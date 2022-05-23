@@ -22,7 +22,7 @@ p{
     color:var(--dark-gray);
 }
 
-button{
+button, input[type="submit"]{
     cursor:pointer;
 }
 

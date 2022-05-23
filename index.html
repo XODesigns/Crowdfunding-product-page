@@ -62,8 +62,8 @@
     
     <section class="body-sec">
       <div class="progress">
-      <div class="amount">
-        <h2>$89,914</h2>
+      <div>
+        <h2 class ="amount-backed" >$0</h2>
         <p>of $100,000 backed</p>
       </div>
 
@@ -150,7 +150,7 @@
       <h3>Back this project</h3>
       <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 
-      <form class="modal-sect">
+      <form class="modal-sect" id="form" action="" method="GET">
 
         <div class="pledge-container">
         <div class="modal-sect-1">
@@ -165,7 +165,8 @@
         <div class="pledge one hide" id="visible">
           <div class="hr"></div>
           <div class="bottom">
-            <button class="modal-btn continue">Continue</button>
+            <!-- <button class="modal-btn continue" type="submit">Continue</button> -->
+            <input type="submit" class="modal-btn" name="continue" id="submit" value="Continue">
           </div>
         </div>
       </div>
@@ -191,7 +192,8 @@
 
             <input type="number"  id="pledge">
           </div>
-            <button class="modal-btn continue">Continue</button>
+            <!-- <button class="modal-btn continue" type="submit">Continue</button> -->
+            <input type="submit" class="modal-btn" name="continue" id="submit" value="Continue">
           </div>
         </div>
         </div>
@@ -215,7 +217,8 @@
           <div class="pledges">
             <input type="number" id="pledge">
             </div>
-          <button class="modal-btn continue">Continue</button>
+          <!-- <button class="modal-btn continue" type="submit">Continue</button> -->
+          <input type="submit" class="modal-btn" name="continue" id="submit" value="Continue">
         </div>
       </div>
       </div>
@@ -235,7 +238,10 @@
       </div>
   </form>
 
+
+
 </div>
+
 
     </section>
 
@@ -247,7 +253,7 @@
         <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
           an email once our campaign is completed.
           </p>
-          <button class="modal-btn">Got it!</button>
+          <button class="modal-btn got-it">Got it!</button>
       </div>
 
     </section>

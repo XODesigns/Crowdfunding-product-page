@@ -5,6 +5,10 @@ const pledge = document.querySelectorAll("#visible")
 const radio = document.querySelectorAll("input[type='radio']")
 const proceed = document.querySelectorAll(".continue")
 const thanks = document.querySelector(".thanks")
+const amount = document.querySelectorAll("input[type='number']")
+const form = document.querySelector("#form")
+const fund = document.querySelector(".amount-backed")
+const btn = document.querySelector(".got-it")
 
 backUs.addEventListener("click", ()=>{
     modalMain.classList.remove("visibility")
@@ -12,6 +16,10 @@ backUs.addEventListener("click", ()=>{
         e.checked=false
     })
     
+})
+
+btn.addEventListener("click", ()=>{
+    thanks.classList.add('hide')
 })
 
 
@@ -42,10 +50,31 @@ backUs.addEventListener("click", ()=>{
     })
 
     /** continue buttons on the modal */
-proceed.forEach((e)=>{
-    e.addEventListener("click", (evt)=>{
-       evt.preventDefault()
-       modalMain.classList.add("visibility")
-        thanks.classList.remove('hide')
+// proceed.forEach((e)=>{
+//     e.addEventListener("click", (evt)=>{
+//        evt.preventDefault()
+    
+
+//     })
+// })
+
+
+/**update the fund amount on the home page when the input has been passed through */
+
+
+ form.addEventListener("submit",(evt)=>{
+        evt.preventDefault();
+        amount.forEach((e)=>{
+            if(e.value){
+                console.log(e.value)
+                let result = e.value
+                fund.innerHTML = `$ ${result}`
+                modalMain.classList.add("visibility")
+                thanks.classList.remove('hide')
+            }
+        })
+        
     })
-})
+
+
+  
