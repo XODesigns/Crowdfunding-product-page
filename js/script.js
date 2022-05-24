@@ -57,10 +57,11 @@ const arr = [];
 
 form.addEventListener("submit", (evt) => {
   evt.preventDefault();
+  // bamboo()
   amount.forEach((e) => {
     if (e.value) {
       /** sum up all input values to the landing page */
-
+      bamboo()
       arr.push(e.value);
       let sum = arr.reduce((a, b) => Number(a) + Number(b));
       console.log(sum);
@@ -76,3 +77,15 @@ form.addEventListener("submit", (evt) => {
     }
   });
 });
+
+
+function bamboo() {
+
+  if (amount[0].value < 25) {
+    alert("amount must be more than $25")
+  } else if (amount[1].value < 75) {
+    alert("amount must be more than $75")
+  } else {
+    e.value = "";
+  }
+}
