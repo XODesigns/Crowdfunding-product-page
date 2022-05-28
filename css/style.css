@@ -102,7 +102,7 @@ header{
     /* padding: 3% 8%; */
     color: var(--white);
     font-weight: 700;
-    height: 50px;
+    height: 56px;
     width: 200px;
 }
 
@@ -116,19 +116,30 @@ header{
     border: none;
     border-radius: 50px;
     position: relative;
-    padding: 0 0 0 30px;
-    font-weight: 700;
-    color: var(--dark-gray);
-    width: 150px;
-    height: 50px;
+    
+    /* width: 160px; */
+    height: 56px;
+ 
+    cursor: pointer;
 }
 
-.bookmark img{
-    width:50px;
-    position:absolute;
-    top:0;
-    left:0;
-    padding:0 2% 0 0;
+.bookmark a{
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+    color: var(--dark-gray);
+    padding: 0;
+    width: 160px;
+}
+
+.bookmark svg{
+    padding:0 5% 0 0;
+}
+
+
+.bookmark a:focus{
+    color:var(--main-cyan);
+    fill:var(--main-cyan);
 }
 
 

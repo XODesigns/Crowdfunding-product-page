@@ -9,6 +9,10 @@ const amount = document.querySelectorAll("input[type='number']");
 const form = document.querySelector("#form");
 const fund = document.querySelector(".amount-backed");
 const btn = document.querySelector(".got-it");
+const rewardBtn = document.querySelectorAll(".reward")
+const pledger = document.querySelectorAll(".pledger")
+const pledgerSec = document.querySelectorAll(".pledgerSec")
+const bookmark = document.querySelector(".bookmark")
 
 backUs.addEventListener("click", () => {
   modalMain.classList.remove("visibility");
@@ -20,6 +24,44 @@ backUs.addEventListener("click", () => {
 btn.addEventListener("click", () => {
   thanks.classList.add("hide");
 });
+
+rewardBtn.forEach((e) => {
+  e.addEventListener("click", (evt) => {
+    evt.preventDefault();
+    modalMain.classList.remove("visibility");
+
+    if (rewardBtn[0]) {
+      pledge[1].classList.remove("hide")
+    } else if (rewardBtn[1]) {
+      pledge[2].classList.remove("hide")
+    }
+  })
+})
+
+
+
+let funding = 86914
+// Create our number formatter.
+let formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  // These options are needed to round to whole numbers if that's what you want.
+  //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+  maximumFractionDigits: 0,
+});
+
+let funds = formatter.format(funding)
+fund.innerHTML = `${funds}`
+
+/** Declare and place pledgers amount on the page */
+let firstCount = 101
+let secCount = 64
+pledger[0].innerHTML = `${firstCount} left`
+pledger[1].innerHTML = `${secCount} left`
+pledgerSec[0].innerHTML = `${firstCount} <span>left</span>`
+pledgerSec[1].innerHTML = `${secCount} <span>left</span>`
+
+
 
 /** Modal checkbox events -  to togglen visibility for the pledge section */
 
@@ -57,27 +99,60 @@ const arr = [];
 
 form.addEventListener("submit", (evt) => {
   evt.preventDefault();
+
   // bamboo()
+
+  /**update the pledges left */
+
+  if (amount[0]) {
+    let x = firstCount - 1
+    console.log(x)
+    pledger[0].innerHTML = `${x} left`
+    pledgerSec[0].innerHTML = `${x} left`
+  } else if (amount[1]) {
+    let y = secCount - 1
+    pledger[1].innerHTML = `${y} left`
+    pledgerSec[1].innerHTML = `${x} left`
+  }
+
+
+
+  //   (e.value)
+  // secCount++
+
+
+
   amount.forEach((e) => {
     if (e.value) {
       /** sum up all input values to the landing page */
-      bamboo()
+      // bamboo()
+      arr.push(funding)
       arr.push(e.value);
-      let sum = arr.reduce((a, b) => Number(a) + Number(b));
+      let sum = arr.reduce((a, b) => a + Number(b));
       console.log(sum);
+      // let count = 101
 
       //   let result = e.value;
-      fund.innerHTML = `$ ${sum}`;
+      fund.innerHTML = `$ ${formatter.format(sum)}`;
       modalMain.classList.add("visibility");
       thanks.classList.remove("hide");
       e.value = "";
       pledge[0].classList.add("hide");
       pledge[1].classList.add("hide");
       pledge[2].classList.add("hide");
+
     }
+
   });
+
 });
 
+
+
+
+
+
+/**function that checks if the amount entered into the inputs equals to the starting amount */
 
 function bamboo() {
 
