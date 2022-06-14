@@ -132,9 +132,13 @@ header{
     width: 160px;
 }
 
-.bookmark svg{
+.bookmark img{
     padding:0 5% 0 0;
 }
+
+/* .deactive{
+    display: none;
+} */
 
 
 .bookmark a:focus{
