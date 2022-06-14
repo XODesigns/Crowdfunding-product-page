@@ -30,6 +30,10 @@ btn.addEventListener("click", () => {
   thanks.classList.add("hide");
 });
 
+bookmark.addEventListener("click", () => {
+  
+})
+
 
 rewardBtn.addEventListener("click", (evt) => {
   evt.preventDefault();
