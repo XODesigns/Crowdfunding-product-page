@@ -26,13 +26,18 @@ backUs.addEventListener("click", () => {
   });
 });
 
+bookmark.addEventListener("click", () => {
+  const active = document.querySelector(".active")
+  const focus = document.querySelector(".focus")
+  const bookmarkAnchor = document.querySelector(".bookmark a")
+  active.classList.toggle("deactive")
+  focus.classList.toggle("deactive")
+  bookmarkAnchor.classList.toggle("bookmarked")
+})
+
 btn.addEventListener("click", () => {
   thanks.classList.add("hide");
 });
-
-bookmark.addEventListener("click", () => {
-  
-})
 
 
 rewardBtn.addEventListener("click", (evt) => {

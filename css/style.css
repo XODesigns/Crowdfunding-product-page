@@ -136,14 +136,13 @@ header{
     padding:0 5% 0 0;
 }
 
-/* .deactive{
+.deactive{
     display: none;
-} */
+}
 
 
-.bookmark a:focus{
+.bookmarked{
     color:var(--main-cyan);
-    fill:var(--main-cyan);
 }
 
 .bookmark circle{
