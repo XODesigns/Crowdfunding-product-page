@@ -112,47 +112,35 @@ header{
 }
 
 .bookmark{
-    background-color: var(--light-gray);
+    background-color: var(--light-gray) !important;
     border: none;
     border-radius: 50px;
-    position: relative;
-    
-    /* width: 160px; */
+    width: 160px;
     height: 56px;
- 
+    padding:0 14px 0 0 ;
     cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: var(--darker-gray);
 }
 
-.bookmark a{
-    display: inline-flex;
-    align-items: center;
-    font-weight: 700;
-    color: var(--dark-gray);
-    padding: 0;
-    width: 160px;
-}
 
 .bookmark img{
-    padding:0 5% 0 0;
+    top:0 !important;
+    left:-10% !important;
 }
+
 
 .deactive{
     display: none;
-}
 
+}
 
 .bookmarked{
     color:var(--main-cyan);
 }
-
-.bookmark circle{
-    fill:var(--main-cyan);
-}
-
-.bookmark path{
-    fill:var(--white)
-}
-
 
 
 
@@ -259,6 +247,12 @@ form#reward{
   justify-content: center;
   grid-template-columns: 1fr 2fr 1fr;
   
+}
+
+.close{
+    display: flex;
+    justify-content: right;
+    cursor: pointer;
 }
 
 .modal-content{
@@ -399,6 +393,19 @@ label:hover{
     color:var(--light-gray)
 }
 
+.pledger span, .pledgerSec span, .pledgerThree span{
+    color:var(--dark-gray);
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding-left: 5px;
+}
+
+.pledger, .pledgerSec, .pledgerThree{
+    display: flex;
+    align-items: center;
+
+}
+
 input[type="number"]{
     border:none;
     border-radius: 50px;
@@ -463,11 +470,16 @@ input[type=number] {
     }
 
     
+.borde-color{
+    border:1px solid var(--main-cyan) !important;
+}
+
 .pledge-container{
     border:1px solid var(--light-gray);
     border-radius: 5px;
     margin: 3% 0;
 }
+
 
 
 .modal-sect-1{
@@ -485,3 +497,127 @@ input[type=number] {
 .hr{
     border-top:1px solid var(--light-gray);
 }
+
+
+@media only screen and (max-width: 1400px){
+    #container{
+        display: grid;
+        grid-template-columns: 1fr repeat(4, 1fr) 1fr;
+        /* grid-template-rows: 1fr 0.5fr 0.3fr 30px 0.5fr 30px 2.5fr 30px; */
+        gap:20px;
+    }
+}
+
+    @media only screen and (max-width: 900px){
+
+        #container{
+            display: grid;
+            grid-template-columns: 1fr repeat(4, 4fr) 1fr;
+            /* grid-template-rows: 1fr 0.5fr 0.3fr 30px 0.5fr 30px 2.5fr 30px; */
+            gap:20px;
+        }
+
+        .menu{
+            display: none;
+        }
+
+        .modal, .thanks{
+            grid-template-columns: 1fr 10fr 1fr;
+        }
+
+        .body-first h1{
+            margin:0 auto;
+        }
+
+        .body-sec {
+            text-align: center;
+        }
+
+       .back-us{
+           width:180px;
+       }
+       .bookmark{
+           width:56px !important;
+           display: block !important;
+           color:rgba(255, 255, 255, 0)
+       }
+       .bookmark img{
+           left:0 !important;
+       }
+
+       .buttons{
+        margin:0 0 10% 0;
+       }
+
+       .progress{
+           display: block !important;
+           padding-top:10%;
+       }
+
+       .progress div{
+           padding-bottom:10%;
+       }
+
+       .progress div:not(:last-child):after{
+           content: "";
+           border-top: 1px solid var(--light-gray);
+           width: 30%;
+           display: inline-block;
+       }
+
+       .progress-bar{
+           margin-bottom: 10%;;
+       }
+
+       .inner-head{
+           display: block;
+       }
+
+       .inner-head p{
+           margin-top: 0;
+       }
+
+       .inner-head h4{
+           margin-bottom: 0;
+       }
+
+       form#reward{
+           display: block;
+           margin-bottom: 5%;
+       }
+       form#reward h2{
+           margin-bottom: 10%;
+       }
+
+       .backProj{
+           display: grid;
+           grid-template-columns: 90% 10%;
+            align-items: center;
+       }
+
+       .backProj h3{
+           grid-column: 1/2;
+           margin:0;
+       }
+
+       .close{
+           grid-column: 2/3;
+       }
+
+       .thanks-content{
+        grid-column: 1/3;
+        width:100%;
+       }
+
+       .amount{
+           grid-column: 1/6;
+           text-align: center;
+       }
+
+       .pledges{
+        grid-column: 2/3;
+       }
+       .modal-btn{
+           grid-column: 3/4;
+       }
+    }

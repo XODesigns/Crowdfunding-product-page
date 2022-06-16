@@ -65,12 +65,17 @@
           <button class="back-us green" aria-label="back-us">
             Back this project
           </button>
-          <div class="bookmark" aria-label="bookmark">
+          <!-- <div class="bookmark" aria-label="bookmark">
             <a href="#"
-              ><img src="images/icon-bookmark.svg" alt="" class="active" /><img  src="images/icon-bookmark-focus.svg" alt="" class="focus deactive" />
+              ><img src="images/icon-bookmark.svg" alt="" width="56" height="56" class="active" /><img  src="images/icon-bookmark-focus.svg" alt="" width="56" height="56" class="focus deactive" />
               Bookmark</a
             >
-          </div>
+          </div> -->
+          <button class="bookmark">
+            <img src="images/icon-bookmark.svg" alt="" width="56" height="56" class="active" /><img  src="images/icon-bookmark-focus.svg" alt="" width="56" height="56" class="focus deactive" />
+            Bookmark
+          </button>
+
         </div>
       </section>
 
@@ -105,7 +110,10 @@
             platform that elevates your screen to a more comfortable viewing
             height. Placing your monitor at eye level has the potential to
             improve your posture and make you more comfortable while at work,
-            helping you stay focused on the task at hand. Featuring artisan
+            helping you stay focused on the task at hand. 
+            </p>
+            <p>
+            Featuring artisan
             craftsmanship, the simplicity of design creates extra desk space
             below your computer to allow notepads, pens, and USB sticks to be
             stored under the stand.
@@ -157,7 +165,7 @@
             </p>
 
             <form action="" id="reward">
-              <h2>0 left</h2>
+              <h2 class="pledgerThree">0 <span>left</span></h2>
               <button class="reward green">Out of Stock</button>
             </form>
           </div>
@@ -167,8 +175,12 @@
       <!-- Start of modals -->
 
       <section class="modal visibility">
+        
         <form class="modal-sect modal-content" id="form" action="" method="GET">
+          <div class="backProj">
+          <div class="close"><img src="images/icon-close-modal.svg" alt=""></div>
           <h3>Back this project</h3>
+        </div>
           <p>
             Want to support us in bringing Mastercraft Bamboo Monitor Riser out
             in the world?
@@ -260,7 +272,7 @@
                 <label class="amount">Enter your pledge</label>
                 <div class="pledges">
                   <input type="number" id="pledge" class="black-pledge" />
--focus                </div>
+             </div>
                 <!-- <button class="modal-btn continue" type="submit">Continue</button> -->
                 <input
                   type="submit"

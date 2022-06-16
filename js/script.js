@@ -16,6 +16,8 @@ const pledgerSec = document.querySelectorAll(".pledgerSec")
 const bookmark = document.querySelector(".bookmark")
 const progressBar = document.querySelector(".bar")
 const backers = document.querySelector(".total-backers")
+const containerPledge = document.querySelectorAll(".pledge-container")
+const closeBtn = document.querySelector(".close")
 
 
 
@@ -26,14 +28,23 @@ backUs.addEventListener("click", () => {
   });
 });
 
-bookmark.addEventListener("click", () => {
+/**Accessing the x from the form to close it when clicked */
+
+closeBtn.addEventListener("click", () => {
+  modalMain.classList.add("visibility");
+})
+
+
+/**bookmark button color change when clicked*/
+bookmark.addEventListener("click", (evt) => {
+  evt.preventDefault();
   const active = document.querySelector(".active")
   const focus = document.querySelector(".focus")
-  const bookmarkAnchor = document.querySelector(".bookmark a")
+  bookmark.classList.toggle("bookmarked")
   active.classList.toggle("deactive")
   focus.classList.toggle("deactive")
-  bookmarkAnchor.classList.toggle("bookmarked")
 })
+
 
 btn.addEventListener("click", () => {
   thanks.classList.add("hide");
@@ -46,6 +57,12 @@ rewardBtn.addEventListener("click", (evt) => {
 
   if (rewardBtn) {
     pledge[1].classList.remove("hide")
+    pledge[0].classList.add("hide");
+    radio[1].checked = true;
+    pledge[2].classList.add("hide");
+    containerPledge[1].style.borderColor = "hsl(176, 50%, 47%)"
+    containerPledge[0].style.borderColor = "hsl(0,0%,90%)"
+    containerPledge[2].style.borderColor = "hsl(0,0%,90%)"
   }
 })
 
@@ -55,8 +72,17 @@ rewardBtnTwo.addEventListener("click", (evt) => {
 
   if (rewardBtnTwo) {
     pledge[2].classList.remove("hide")
+    pledge[0].classList.add("hide");
+    radio[2].checked = true;
+    pledge[1].classList.add("hide");
+    containerPledge[2].style.borderColor = "hsl(176, 50%, 47%)"
+    containerPledge[0].style.borderColor = "hsl(0,0%,90%)"
+    containerPledge[1].style.borderColor = "hsl(0,0%,90%)"
+
   }
 })
+
+
 
 
 /**Total Backers */
@@ -84,8 +110,8 @@ fund.innerHTML = `${funds}`
 let firstCount = 101
 let secCount = 64
 let left = "left"
-pledger[0].innerHTML = `${firstCount} ${left}`
-pledger[1].innerHTML = `${secCount} ${left}`
+pledger[0].innerHTML = `${firstCount} <span>${left}</span>`
+pledger[1].innerHTML = `${secCount} <span>${left}</span>`
 pledgerSec[0].innerHTML = `${firstCount} <span>${left}</span>`
 pledgerSec[1].innerHTML = `${secCount} <span>${left}</span>`
 
@@ -104,16 +130,25 @@ label.forEach((e) => {
       radio[0].checked = true;
       pledge[1].classList.add("hide");
       pledge[2].classList.add("hide");
+      containerPledge[0].style.borderColor = "hsl(176, 50%, 47%)"
+      containerPledge[1].style.borderColor = "hsl(0,0%,90%)"
+      containerPledge[2].style.borderColor = "hsl(0,0%,90%)"
     } else if (e.classList.contains("two")) {
       pledge[1].classList.toggle("hide");
       radio[1].checked = true;
       pledge[0].classList.add("hide");
       pledge[2].classList.add("hide");
+      containerPledge[1].style.borderColor = "hsl(176, 50%, 47%)"
+      containerPledge[0].style.borderColor = "hsl(0,0%,90%)"
+      containerPledge[2].style.borderColor = "hsl(0,0%,90%)"
     } else if (e.classList.contains("three")) {
       pledge[2].classList.toggle("hide");
       radio[2].checked = true;
       pledge[1].classList.add("hide");
       pledge[0].classList.add("hide");
+      containerPledge[2].style.borderColor = "hsl(176, 50%, 47%)"
+      containerPledge[0].style.borderColor = "hsl(0,0%,90%)"
+      containerPledge[1].style.borderColor = "hsl(0,0%,90%)"
     }
   });
 });
@@ -183,25 +218,25 @@ form.addEventListener("submit", (evt) => {
 
 function bamboo() {
 
-  if (amount[0].value < 25) {
+  if (amount[0].value < Number(25)) {
     alert("amount must be more than $25")
-  } else if (amount[1].value < 75) {
+  } else if (amount[1].value < Number(75)) {
     alert("amount must be more than $75")
   } else {
-    e.value = "";
+    amount.value = "";
   }
 }
 
 function backed() {
-  if (amount[0]) {
+  if (amount[0].value) {
     let x = firstCount - 1
     console.log(x)
     pledger[0].innerHTML = `${x} left`
     pledgerSec[0].innerHTML = `${x} left`
-  } else if (amount[1]) {
+  } else if (amount[1].value) {
     let y = secCount - 1
     pledger[1].innerHTML = `${y} left`
-    pledgerSec[1].innerHTML = `${x} left`
+    pledgerSec[1].innerHTML = `${y} left`
   }
 
 }
