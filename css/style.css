@@ -215,6 +215,11 @@ form#rewardOne, form#rewardTwo, form#rewardThree{
     font-size:16px;
 }
 
+h2.about-proj{
+    font-size: 20px;
+    margin-top:5%;
+}
+
 .inner-head{
     display: flex;
     justify-content: space-between;
