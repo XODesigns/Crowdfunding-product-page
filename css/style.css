@@ -198,7 +198,7 @@ padding: var(--body-padding);
 margin:0 0 5%;
 }
 
-form#reward{
+form#rewardOne, form#rewardTwo, form#rewardThree{
     display: flex;
     justify-content: space-between;
 }
@@ -591,11 +591,11 @@ input[type=number] {
            margin-bottom: 0;
        }
 
-       form#reward{
+       form#rewardOne, form#rewardTwo, form#rewardThree{
            display: block;
            margin-bottom: 5%;
        }
-       form#reward h2{
+       form#rewardOne h2, form#rewardTwo h2, form#rewardThree h2{
            margin-bottom: 10%;
        }
 
