@@ -18,6 +18,9 @@ const progressBar = document.querySelector(".bar")
 const backers = document.querySelector(".total-backers")
 const containerPledge = document.querySelectorAll(".pledge-container")
 const closeBtn = document.querySelector(".close")
+const mobileMenu = document.querySelector(".mobile")
+const burger = document.querySelector("#burger")
+const closeMenu = document.querySelector(".menu-close")
 
 
 
@@ -27,6 +30,21 @@ backUs.addEventListener("click", () => {
     e.checked = false;
   });
 });
+
+/**Mobile menu toggle */
+
+mobileMenu.style.display = "none"
+// burger.style.display = "block"
+
+closeMenu.addEventListener("click", () => {
+  mobileMenu.style.display = "none"
+  burger.classList.remove("hideBurger")
+})
+
+burger.addEventListener("click", () => {
+  mobileMenu.style.display = "grid"
+  burger.classList.add("hideBurger")
+})
 
 /**Accessing the x from the form to close it when clicked */
 
@@ -171,7 +189,7 @@ form.addEventListener("submit", (evt) => {
 
   /**update the pledges left */
 
-  backed()
+
 
 
   //   (e.value)
@@ -179,7 +197,13 @@ form.addEventListener("submit", (evt) => {
   totalBackers()
 
   amount.forEach((e) => {
-    if (e.value) {
+
+    let value = Number(amount[0].value)
+    let valueTwo = Number(amount[1].value)
+
+    if (value >= 25 || valueTwo >= 75) {
+      backed()
+      console.log(typeof value)
       /** sum up all input values to the landing page */
       // bamboo()
       arr.push(funding)
@@ -216,16 +240,16 @@ form.addEventListener("submit", (evt) => {
  * the third is to update the total backers 
  */
 
-function bamboo() {
+// function bamboo() {
 
-  if (amount[0].value < Number(25)) {
-    alert("amount must be more than $25")
-  } else if (amount[1].value < Number(75)) {
-    alert("amount must be more than $75")
-  } else {
-    amount.value = "";
-  }
-}
+//   if (amount[0].value < Number(25)) {
+//     amount.value = "";
+//   } else if (amount[1].value < Number(75)) {
+//     amount.value = "";
+//   } else {
+
+//   }
+// }
 
 function backed() {
   if (amount[0].value) {
