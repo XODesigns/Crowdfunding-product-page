@@ -34,7 +34,7 @@ backUs.addEventListener("click", () => {
 /**Mobile menu toggle */
 
 mobileMenu.style.display = "none"
-// burger.style.display = "block"
+
 
 closeMenu.addEventListener("click", () => {
   mobileMenu.style.display = "none"
@@ -252,15 +252,16 @@ form.addEventListener("submit", (evt) => {
 // }
 
 function backed() {
+
   if (amount[0].value) {
     let x = firstCount - 1
     console.log(x)
-    pledger[0].innerHTML = `${x} left`
-    pledgerSec[0].innerHTML = `${x} left`
+    pledger[0].innerHTML = `${x} <span>${left}</span>`
+    pledgerSec[0].innerHTML = `${x} <span>${left}</span>`
   } else if (amount[1].value) {
     let y = secCount - 1
-    pledger[1].innerHTML = `${y} left`
-    pledgerSec[1].innerHTML = `${y} left`
+    pledger[1].innerHTML = `${y} <span>${left}</span>`
+    pledgerSec[1].innerHTML = `${y} <span>${left}</span>`
   }
 
 }
@@ -273,3 +274,42 @@ function totalBackers() {
 
 
 }
+
+
+/**Day count down */
+let countDownDate = new Date("Aug 17, 2022 16:37:52").getTime();
+
+/**Make the timer function update every second */
+let myfunc = setInterval(() => {
+
+  /**we calculate the time difference (in milliseconds​) between our current date and end date. 
+   * Once this difference has been​ found, we ​convert the milliseconds into days, 
+   * hours, minutes, and seconds. */
+  let now = new Date().getTime();
+  let timeleft = countDownDate - now;
+
+  let days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+  /**Display the values for the days, hours, minutes, and seconds 
+   * (that we calculated) to the users through HTML. The following 
+   * code replaces HTML elements, that have their own respective IDs, 
+   * with the appropriate values. */
+  document.querySelector(".days").innerHTML = `<h2>${days}</h2> <p>days left</p>`
+  //  document.getElementById("hours").innerHTML = hours + "h " 
+  //  document.getElementById("mins").innerHTML = minutes + "m " 
+  //  document.getElementById("secs").innerHTML = seconds + "s"
+
+  /** The following code clears the values of days, hours, minutes, and seconds 
+   * and displays a heading when the timer is up. It also stops executing 
+   * myfunc using the clearInterval method.*/
+
+  if (timeleft < 0) {
+    clearInterval(myfunc);
+    document.querySelector(".days").innerHTML = ""
+    document.querySelector(".days").innerHTML = `<h2>Time Up!!</h2>`;
+  }
+
+}, 1000)
