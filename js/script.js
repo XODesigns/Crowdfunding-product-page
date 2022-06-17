@@ -1,7 +1,9 @@
 const backUs = document.querySelector(".back-us");
 const modalMain = document.querySelector(".modal");
 const label = document.querySelectorAll(".label");
-const pledge = document.querySelectorAll("#visible");
+const pledgeOne = document.querySelector("#visibleOne");
+const pledgeTwo = document.querySelector("#visibleTwo");
+const pledgeThree = document.querySelector("#visibleThree");
 const radio = document.querySelectorAll("input[type='radio']");
 const proceed = document.querySelectorAll(".continue");
 const thanks = document.querySelector(".thanks");
@@ -74,10 +76,10 @@ rewardBtn.addEventListener("click", (evt) => {
   modalMain.classList.remove("visibility");
 
   if (rewardBtn) {
-    pledge[1].classList.remove("hide")
-    pledge[0].classList.add("hide");
+    pledgeTwo.classList.remove("hide")
+    pledgeOne.classList.add("hide");
     radio[1].checked = true;
-    pledge[2].classList.add("hide");
+    pledgeThree.classList.add("hide");
     containerPledge[1].style.borderColor = "hsl(176, 50%, 47%)"
     containerPledge[0].style.borderColor = "hsl(0,0%,90%)"
     containerPledge[2].style.borderColor = "hsl(0,0%,90%)"
@@ -89,10 +91,10 @@ rewardBtnTwo.addEventListener("click", (evt) => {
   modalMain.classList.remove("visibility");
 
   if (rewardBtnTwo) {
-    pledge[2].classList.remove("hide")
-    pledge[0].classList.add("hide");
+    pledgeThree.classList.remove("hide")
+    pledgeOne.classList.add("hide");
     radio[2].checked = true;
-    pledge[1].classList.add("hide");
+    pledgeTwo.classList.add("hide");
     containerPledge[2].style.borderColor = "hsl(176, 50%, 47%)"
     containerPledge[0].style.borderColor = "hsl(0,0%,90%)"
     containerPledge[1].style.borderColor = "hsl(0,0%,90%)"
@@ -144,26 +146,26 @@ progressBar.style.width = `${placeHolder}%`
 label.forEach((e) => {
   e.addEventListener("click", () => {
     if (e.classList.contains("one")) {
-      pledge[0].classList.toggle("hide");
+      pledgeOne.classList.toggle("hide");
       radio[0].checked = true;
-      pledge[1].classList.add("hide");
-      pledge[2].classList.add("hide");
+      pledgeTwo.classList.add("hide");
+      pledgeThree.classList.add("hide");
       containerPledge[0].style.borderColor = "hsl(176, 50%, 47%)"
       containerPledge[1].style.borderColor = "hsl(0,0%,90%)"
       containerPledge[2].style.borderColor = "hsl(0,0%,90%)"
     } else if (e.classList.contains("two")) {
-      pledge[1].classList.toggle("hide");
+      pledgeTwo.classList.toggle("hide");
       radio[1].checked = true;
-      pledge[0].classList.add("hide");
-      pledge[2].classList.add("hide");
+      pledgeOne.classList.add("hide");
+      pledgeThree.classList.add("hide");
       containerPledge[1].style.borderColor = "hsl(176, 50%, 47%)"
       containerPledge[0].style.borderColor = "hsl(0,0%,90%)"
       containerPledge[2].style.borderColor = "hsl(0,0%,90%)"
     } else if (e.classList.contains("three")) {
-      pledge[2].classList.toggle("hide");
+      pledgeThree.classList.toggle("hide");
       radio[2].checked = true;
-      pledge[1].classList.add("hide");
-      pledge[0].classList.add("hide");
+      pledgeTwo.classList.add("hide");
+      pledgeOne.classList.add("hide");
       containerPledge[2].style.borderColor = "hsl(176, 50%, 47%)"
       containerPledge[0].style.borderColor = "hsl(0,0%,90%)"
       containerPledge[1].style.borderColor = "hsl(0,0%,90%)"
@@ -223,9 +225,9 @@ form.addEventListener("submit", (evt) => {
       modalMain.classList.add("visibility");
       thanks.classList.remove("hide");
       e.value = "";
-      pledge[0].classList.add("hide");
-      pledge[1].classList.add("hide");
-      pledge[2].classList.add("hide");
+      pledgeOne.classList.add("hide");
+      pledgeTwo.classList.add("hide");
+      pledgeThree.classList.add("hide");
 
     }
 
