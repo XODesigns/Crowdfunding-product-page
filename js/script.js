@@ -323,7 +323,7 @@ let myfunc = setInterval(() => {
   if (timeleft < 0) {
     clearInterval(myfunc);
     document.querySelector(".days").innerHTML = ""
-    document.querySelector(".days").innerHTML = `<h2>Time Up!!</h2>`;
+    document.querySelector(".days").innerHTML = `<h2>${days}</h2> <p>days left</p>`;
   }
 
 }, 1000)
