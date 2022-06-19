@@ -182,7 +182,7 @@ header{
     position: absolute;
     background-color: var(--main-cyan);
     height:12px;
-
+    max-width: 100%;
     border-radius:50px;
 }
 
