@@ -245,6 +245,10 @@ h2.about-proj{
     opacity: 0.4;
 }
 
+.inner-sect.three button, .mahogany button{
+background-color: var(--dark-gray);
+}
+
 .modal, .thanks{  
   position: fixed; 
   z-index: 1;
