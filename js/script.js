@@ -205,13 +205,17 @@ form.addEventListener("submit", (evt) => {
 
     if (value >= 25 || valueTwo >= 75) {
       backed()
-      console.log(typeof value)
+      // console.log(typeof value)
       /** sum up all input values to the landing page */
       // bamboo()
-      arr.push(funding)
-      arr.push(e.value);
-      let sum = arr.reduce((a, b) => a + Number(b));
-      console.log(sum);
+      // arr.push(funding)
+      // arr.push(e.value);
+      // let sum = arr.reduce((a, b) => a + Number(b));
+      // console.log(sum);
+      let sum = funding + Number(e.value);
+      funding = sum
+      // arr.push(sum)
+      console.log(funding);
 
       /**progress bar */
       let progress = e.value / 1000
@@ -221,7 +225,7 @@ form.addEventListener("submit", (evt) => {
       console.log(`${bar}%`)
 
 
-      fund.innerHTML = ` ${formatter.format(sum)}`;
+      fund.innerHTML = `${formatter.format(sum)}`;
       modalMain.classList.add("visibility");
       thanks.classList.remove("hide");
       e.value = "";
