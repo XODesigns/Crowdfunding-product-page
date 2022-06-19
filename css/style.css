@@ -511,6 +511,19 @@ input[type=number] {
 }
 
 
+@media only screen and (min-width:1000px){
+    
+    .progress div:not(:last-child){
+        border-right: solid 1px var(--light-gray);
+        margin-left:25%;
+    }
+    
+    .progress div:last-child{
+        margin-left:25%;
+    }
+}
+
+
 @media only screen and (max-width: 1400px){
     #container{
         display: grid;
