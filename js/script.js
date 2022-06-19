@@ -218,8 +218,8 @@ form.addEventListener("submit", (evt) => {
       console.log(funding);
 
       /**progress bar */
-      let progress = e.value / 1000
-      let bar = placeHolder + progress
+      let progress = sum / 1000
+      let bar = progress
 
       progressBar.style.width = `${bar}%`
       console.log(`${bar}%`)
