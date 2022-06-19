@@ -63,6 +63,8 @@ bookmark.addEventListener("click", (evt) => {
   bookmark.classList.toggle("bookmarked")
   active.classList.toggle("deactive")
   focus.classList.toggle("deactive")
+  localStorage.setItem("BookmarkedText", active)
+  localStorage.setItem("BookmarkedIcon", focus)
 })
 
 
@@ -111,6 +113,7 @@ let nf = new Intl.NumberFormat('en-US');
 let backersLeft = nf.format(number);
 
 backers.innerHTML = `${backersLeft}`
+localStorage.setItem("Backers", `${backersLeft}`)
 
 /**Backing Amount */
 let funding = 86914
@@ -134,6 +137,9 @@ pledger[0].innerHTML = `${firstCount} <span>${left}</span>`
 pledger[1].innerHTML = `${secCount} <span>${left}</span>`
 pledgerSec[0].innerHTML = `${firstCount} <span>${left}</span>`
 pledgerSec[1].innerHTML = `${secCount} <span>${left}</span>`
+
+localStorage.setItem("BambooStand", `${firstCount} ${left}`)
+localStorage.setItem("BlackEdition", `${secCount} ${left}`)
 
 
 /** Progress Bar placeholder laoder */
@@ -222,10 +228,12 @@ form.addEventListener("submit", (evt) => {
       let bar = progress
 
       progressBar.style.width = `${bar}%`
+      localStorage.setItem("ProgressBar", `${bar}%`)
       console.log(`${bar}%`)
 
 
       fund.innerHTML = `${formatter.format(sum)}`;
+      localStorage.setItem("Amount", `${formatter.format(sum)}`)
       modalMain.classList.add("visibility");
       thanks.classList.remove("hide");
       e.value = "";
