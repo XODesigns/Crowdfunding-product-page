@@ -291,7 +291,7 @@ function totalBackers() {
 
 
 /**Day count down */
-let countDownDate = new Date("Aug 17, 2022 16:37:52").getTime();
+let countDownDate = new Date("Aug 17, 2024 16:37:52").getTime();
 
 /**Make the timer function update every second */
 let myfunc = setInterval(() => {
